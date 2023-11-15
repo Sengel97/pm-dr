@@ -48,7 +48,7 @@ function featuredCarousel() {
     let splides = $('#featured-carousel');
     for (let i = 0, splideLength = splides.length; i < splideLength; i++) {
         new Splide(splides[i], {
-            perPage: 4,
+            perPage: 3,
             arrows: false,
             pagination: false,
             //focus: 'center',
