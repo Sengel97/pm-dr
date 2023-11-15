@@ -58,7 +58,7 @@ function featuredCarousel() {
             drag: false,
             autoScroll: {
                 autoStart: true,
-                speed: 1.8,
+                speed: 4,
                 pauseOnHover: false,
                 pauseOnFocus: false,
             },
