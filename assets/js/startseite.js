@@ -43,7 +43,7 @@ menuIsOpened();
 //
 //  Featured Carousel
 //
-function logos() {
+function featuredCarousel() {
 
     let splides = $('#featured-carousel');
     for (let i = 0, splideLength = splides.length; i < splideLength; i++) {
