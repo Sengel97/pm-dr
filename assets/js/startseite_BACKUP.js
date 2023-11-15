@@ -1,3 +1,4 @@
+<script>
 $(window).scroll(function() {
 if ($(this).scrollTop() > 1){  
     $('header.header').addClass("sticky");
@@ -131,8 +132,9 @@ for ( let i = 0, splideLength = splides.length; i < splideLength; i++ ) {
 }
 
 logosStartMobile();
+</script>
 
-
+<script>
     document.querySelector(".home-cards-container").removeAttribute("role");
     document.querySelectorAll(".testimonial-card-item").forEach(trigger => { trigger.removeAttribute("role") });
     document.querySelector(".swiper-slide").classList.add("cc-first");
@@ -210,16 +212,18 @@ logosStartMobile();
         swiper.params.shortSwipes = true;
     }
     setTimeout(() => {document.querySelector('.home-cards-wrap').classList.remove('loading');}, 2200);
+</script>
 
-
+<script>
 	$(window).on('load', function(){
     $('.home-slider-card-inner img').each(function(){
         $(this).removeAttr('sizes');
         $(this).removeAttr('srcset');
     });
 	});
+</script>
 
-
+<script>
 // Accordion Settings 
 const accSettings = {
   speed: 300, // Animation speed
@@ -305,3 +309,4 @@ const accordion = (function(){
 $(document).ready(function(){
   accordion.init(accSettings);
 });
+</script>
