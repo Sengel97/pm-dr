@@ -108,7 +108,6 @@ function logos() {
             gap: '35px',
             type: 'loop',
             drag: false,
-            autoWidth: true,
             autoScroll: {
                 autoStart: true,
                 speed: 0.8,
@@ -160,7 +159,6 @@ function logosStartMobile() {
             gap: '35px',
             type: 'loop',
             drag: false,
-            autoWidth: true,
             autoScroll: {
                 autoStart: true,
                 speed: 0.8,
