@@ -108,6 +108,7 @@ function logos() {
             gap: '35px',
             type: 'loop',
             drag: false,
+            autoWidth: true,
             autoScroll: {
                 autoStart: true,
                 speed: 0.8,
@@ -159,34 +160,35 @@ function logosStartMobile() {
             gap: '35px',
             type: 'loop',
             drag: false,
+            autoWidth: true,
             autoScroll: {
-            autoStart: true,
-            speed: 0.8,
-            pauseOnHover: false,
-            pauseOnFocus: false,
-        },
-        intersection: {
-            inView: {
-                autoScroll: true,
+                autoStart: true,
+                speed: 0.8,
+                pauseOnHover: false,
+                pauseOnFocus: false,
             },
-            outView: {
-                autoScroll: false,
+            intersection: {
+                inView: {
+                    autoScroll: true,
+                },
+                outView: {
+                    autoScroll: false,
+                },
             },
-        },
-        breakpoints: {
-            1320: {
-                perPage: 5,
-            },
-            1080: {
-                perPage: 4,
-            },
-            768: {
-                perPage: 3,
-            },
-            425: {
-                perPage: 2,
-            },
-        }
+            breakpoints: {
+                1320: {
+                    perPage: 5,
+                },
+                1080: {
+                    perPage: 4,
+                },
+                768: {
+                    perPage: 3,
+                },
+                425: {
+                    perPage: 2,
+                },
+            }
         }).mount( window.splide.Extensions );
     }
 }
