@@ -56,9 +56,10 @@ function featuredCarousel() {
             gap: '30px',
             type: 'loop',
             drag: false,
+            autoWidth: true,
             autoScroll: {
                 autoStart: true,
-                speed: 0.6,
+                speed: 0.7,
                 pauseOnHover: false,
                 pauseOnFocus: false,
             },
