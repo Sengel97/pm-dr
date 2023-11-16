@@ -53,7 +53,7 @@ function featuredCarousel() {
             pagination: false,
             //focus: 'center',
             direction: 'ltr',
-            gap: '30px',
+            gap: '34px',
             type: 'loop',
             drag: false,
             autoWidth: true,
