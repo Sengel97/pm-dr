@@ -93,6 +93,58 @@ featuredCarousel();
 
 
 //
+//  Featured Carousel
+//
+function mobileFeaturedCarousel() {
+
+    let splides = $('#mobile-featured-carousel');
+    for (let i = 0, splideLength = splides.length; i < splideLength; i++) {
+        new Splide(splides[i], {
+            perPage: 3,
+            arrows: false,
+            pagination: false,
+            //focus: 'center',
+            direction: 'ltr',
+            gap: '34px',
+            type: 'loop',
+            drag: false,
+            autoWidth: true,
+            autoScroll: {
+                autoStart: true,
+                speed: 0.7,
+                pauseOnHover: false,
+                pauseOnFocus: false,
+            },
+            intersection: {
+                inView: {
+                    autoScroll: true,
+                },
+                outView: {
+                    autoScroll: false,
+                },
+            },
+            breakpoints: {
+                1320: {
+                    perPage: 5,
+                },
+                1080: {
+                    perPage: 4,
+                },
+                768: {
+                    perPage: 3,
+                },
+                425: {
+                    perPage: 2,
+                },
+            }
+        }).mount(window.splide.Extensions);
+    }
+}
+mobileFeaturedCarousel();
+
+
+
+//
 //  Logos
 //
 function logos() {
