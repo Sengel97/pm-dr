@@ -247,99 +247,6 @@ logosStartMobile();
 
 
 //
-// Home Cards
-//
-document.querySelector(".home-cards-container").removeAttribute("role");
-document.querySelectorAll(".testimonial-card-item").forEach(trigger => { trigger.removeAttribute("role") });
-document.querySelector(".swiper-slide").classList.add("cc-first");
-const swiperEl = document.querySelector('.home-cards-swiper');
-const swiper = new Swiper(swiperEl, {
-    grabCursor: true,
-    watchSlidesProgress: true,
-    loop: true,
-    speed: 550,
-    loopedSlides: 5,
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    shortSwipes: false,
-
-    navigation: {
-        nextEl: '.home-cards-slider-btn-right',
-        prevEl: '.home-cards-slider-btn-left',
-    },
-    autoplay: {
-        delay: 6000,
-        disableOnInteraction: false,
-    },
-    on: {
-        progress(swiper) {
-            const scaleStep = 0.18;
-            const zIndexMax = swiper.slides.length;
-
-            for (let i = 0; i < swiper.slides.length; i += 1) {
-                const slideEl = swiper.slides[i];
-                const sliderCard = slideEl.querySelector('.home-slider-card');
-                //const sliderVid = slideEl.querySelector("video");
-                const slideProgress = swiper.slides[i].progress;
-                const absProgress = Math.abs(slideProgress);
-                var modify = 1;
-
-                if (absProgress > 1.9) {
-                    modify = (absProgress - 1.9) * 0.25 + 1;
-                }
-
-                const opacityEls = slideEl.querySelectorAll(
-                    '.home-slider-card-innerr',
-                );
-                const translate = `${slideProgress * modify * 78}%`;
-                const scale = 1 - absProgress * scaleStep;
-                const zIndex = zIndexMax - Math.abs(Math.round(slideProgress));
-                slideEl.style.transform = `translateX(${translate}) scale(${scale})`;
-                slideEl.style.zIndex = zIndex;
-
-                if (absProgress > 2.5) {
-                    sliderCard.style.display = "none";
-                } else {
-                    sliderCard.style.display = "block";
-                }
-
-                opacityEls.forEach((opacityEl) => {
-                    opacityEl.style.opacity = 1 - absProgress;
-                });
-            }
-        },
-        setTransition(swiper, duration) {
-            for (let i = 0; i < swiper.slides.length; i += 1) {
-                const slideEl = swiper.slides[i];
-                const opacityEls = slideEl.querySelectorAll(
-                    '.home-slider-card-inner',
-                );
-                slideEl.style.transitionDuration = `${duration}ms`;
-                opacityEls.forEach((opacityEl) => {
-                    opacityEl.style.transitionDuration = `${duration}ms`;
-                });
-            }
-        },
-    },
-});
-
-if (window.innerWidth < 479) {
-    console.log("Test");
-    swiper.params.shortSwipes = true;
-}
-
-setTimeout(() => {document.querySelector('.home-cards-wrap').classList.remove('loading');}, 2200);
-
-$(window).on('load', function(){
-    $('.home-slider-card-inner img').each(function(){
-        $(this).removeAttr('sizes');
-        $(this).removeAttr('srcset');
-    });
-});
-
-
-
-//
 // FAQ Accordion Settings
 //
 const accSettings = {
@@ -435,3 +342,96 @@ function disabled() {
 }
 
 disabled();
+
+
+
+//
+// Home Cards
+//
+document.querySelector(".home-cards-container").removeAttribute("role");
+document.querySelectorAll(".testimonial-card-item").forEach(trigger => { trigger.removeAttribute("role") });
+document.querySelector(".swiper-slide").classList.add("cc-first");
+const swiperEl = document.querySelector('.home-cards-swiper');
+const swiper = new Swiper(swiperEl, {
+    grabCursor: true,
+    watchSlidesProgress: true,
+    loop: true,
+    speed: 550,
+    loopedSlides: 5,
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    shortSwipes: false,
+
+    navigation: {
+        nextEl: '.home-cards-slider-btn-right',
+        prevEl: '.home-cards-slider-btn-left',
+    },
+    autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+    },
+    on: {
+        progress(swiper) {
+            const scaleStep = 0.18;
+            const zIndexMax = swiper.slides.length;
+
+            for (let i = 0; i < swiper.slides.length; i += 1) {
+                const slideEl = swiper.slides[i];
+                const sliderCard = slideEl.querySelector('.home-slider-card');
+                //const sliderVid = slideEl.querySelector("video");
+                const slideProgress = swiper.slides[i].progress;
+                const absProgress = Math.abs(slideProgress);
+                var modify = 1;
+
+                if (absProgress > 1.9) {
+                    modify = (absProgress - 1.9) * 0.25 + 1;
+                }
+
+                const opacityEls = slideEl.querySelectorAll(
+                    '.home-slider-card-innerr',
+                );
+                const translate = `${slideProgress * modify * 78}%`;
+                const scale = 1 - absProgress * scaleStep;
+                const zIndex = zIndexMax - Math.abs(Math.round(slideProgress));
+                slideEl.style.transform = `translateX(${translate}) scale(${scale})`;
+                slideEl.style.zIndex = zIndex;
+
+                if (absProgress > 2.5) {
+                    sliderCard.style.display = "none";
+                } else {
+                    sliderCard.style.display = "block";
+                }
+
+                opacityEls.forEach((opacityEl) => {
+                    opacityEl.style.opacity = 1 - absProgress;
+                });
+            }
+        },
+        setTransition(swiper, duration) {
+            for (let i = 0; i < swiper.slides.length; i += 1) {
+                const slideEl = swiper.slides[i];
+                const opacityEls = slideEl.querySelectorAll(
+                    '.home-slider-card-inner',
+                );
+                slideEl.style.transitionDuration = `${duration}ms`;
+                opacityEls.forEach((opacityEl) => {
+                    opacityEl.style.transitionDuration = `${duration}ms`;
+                });
+            }
+        },
+    },
+});
+
+if (window.innerWidth < 479) {
+    console.log("Test");
+    swiper.params.shortSwipes = true;
+}
+
+setTimeout(() => { document.querySelector('.home-cards-wrap').classList.remove('loading'); }, 2200);
+
+$(window).on('load', function () {
+    $('.home-slider-card-inner img').each(function () {
+        $(this).removeAttr('sizes');
+        $(this).removeAttr('srcset');
+    });
+});
