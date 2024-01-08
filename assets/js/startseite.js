@@ -348,6 +348,7 @@ disabled();
 //
 // Home Cards
 //
+/*
 document.querySelector(".home-cards-container").removeAttribute("role");
 document.querySelectorAll(".testimonial-card-item").forEach(trigger => { trigger.removeAttribute("role") });
 document.querySelector(".swiper-slide").classList.add("cc-first");
@@ -434,4 +435,4 @@ $(window).on('load', function () {
         $(this).removeAttr('sizes');
         $(this).removeAttr('srcset');
     });
-});
+});*/
