@@ -132,7 +132,6 @@ header.sticky {
     box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.15);
     border-radius: 12.5px;
     min-height: 75px;
-    max-height: 75px;
     max-width: 1000px;
     padding-left: 20px;
     padding-right: 20px;
@@ -160,9 +159,6 @@ header.sticky .header-container img {
 header.sticky .header-container {
     display: flex;
     width: 100%;
-
-    min-height: 75px;
-    align-content: center;
 }
 
 header.sticky .header-container .header-logo {
