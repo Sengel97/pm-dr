@@ -160,6 +160,9 @@ header.sticky .header-container img {
 header.sticky .header-container {
     display: flex;
     width: 100%;
+
+    min-height: 75px;
+    align-content: center;
 }
 
 header.sticky .header-container .header-logo {
